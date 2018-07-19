@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+{% block content %}
+
+<div class="row expanded collapse banner-container" id="home-banner-container">
+	<h1 id="page-title">Page Title Here</h1>
+	{% include 'nav.twig' with {'menu': menu.get_items} %}
+</div>
+
+
+
+{% endblock %}

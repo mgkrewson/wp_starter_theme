@@ -1,0 +1,640 @@
+/** 
+For wireframes only
+*/
+
+// .row {
+//     border: 1px dashed $dark-gray !important;
+// }
+// .column {
+//     border: 1px solid $dark-gray !important;
+// }
+@import 'grid/column';
+@import 'grid/size';
+@import 'grid/gutter';
+@import 'global';
+.no-js {
+    @include breakpoint(small only) {
+        #nav-main {
+            display: none;
+        }
+    }
+    @include breakpoint(medium) {
+        #mobile-nav {
+            display: none;
+        }
+    }
+}
+
+.medium-0,
+.large-0 {
+    display: none;
+}
+
+.first-letter {
+    font-size: 1.15em;
+}
+
+.alignright {
+    float: right;
+}
+
+$logo-shadow: 5px 5px 26px -8px rgba(0, 0, 0, 0.82);
+$header-height: 70px;
+.header {
+    position: absolute;
+    width: 100%;
+    height: $header-height;
+    #nav-sticky-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        background: transparent;
+        border-bottom: 2px solid #c78238;
+        #menu-bar {
+            height: 100%;
+        }
+        #site-logo-container {
+            $width: 200px;
+            width: $width;
+            height: $width * (419 / 468);
+            position: absolute;
+            left: 5%;
+            top: 20%;
+            transition: 250ms all;
+            @include breakpoint(small only) {
+                $width: 150px;
+                width: $width;
+                height: $width * (419 / 468);
+            }
+            #header-logo {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #nav-main {
+            height: 100%;
+            .menu {
+                z-index: 10;
+            }
+            a {
+                transition: 0.2s all;
+                color: $white;
+                font-family: $header-font-family;
+                font-size: 2rem;
+                line-height: 45px;
+                letter-spacing: 0.2rem;
+                text-transform: uppercase;
+                padding: 0.7rem 0.7rem;
+                &:hover {
+                    color: saturate(#c78238, 20%);
+                }
+            }
+            #nav-icon-wrapper {
+                float: right;
+                width: 100%;
+                max-width: rem_calc(154px);
+                margin-right: 8%;
+                @include breakpoint(small only) {
+                    margin-right: 4%;
+                    max-width: rem_calc(120px);
+                }
+                a {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 2rem;
+                    letter-spacing: 0;
+                    line-height: $header-height;
+                    margin-left: 10%;
+                    padding: 0;
+                    @include breakpoint (small only) {
+                        margin-left: 3%;
+                    }
+                }
+            }
+        } // #mobile-nav {
+        //     height: 100%;
+        //     background: transparent;
+        //     #mobile-nav-icon {
+        //         text-align: right;
+        //         i {
+        //             line-height: rem_calc($header-height) - (2 * $titlebar-padding);
+        //             padding-right: 1rem;
+        //         }
+        //     }
+        // }
+    }
+}
+
+#banner-nav {
+    position: absolute;
+    bottom: 5px;
+    left: 5%;
+    width: fit-content;
+    max-width: 95%;
+    font-size: 1.7rem;
+    letter-spacing: -0.1rem;
+    text-transform: lowercase;
+    text-align: left;
+    .banner-nav-row {
+        padding: 0;
+        margin-bottom: 0.5rem;
+        ul {
+            text-align: left;
+            li {
+                border-left: 1px solid $white;
+                height: 2.5rem;
+                vertical-align: bottom;
+                overflow: hidden;
+                background: rgba($secondary-color, 0.9);
+                .first-letter {
+                    font-size: 1em;
+                }
+                a {
+                    padding: 0.4rem 1rem 0.4rem 0.8rem;
+                }
+            }
+        }
+        a {
+            color: $white;
+            &:hover {
+                color: saturate(#c78238, 20%);
+            }
+        }
+        &#banner-nav-icon-wrapper {
+            font-size: 1.4rem;
+            li {
+                padding: 0 0.5rem 0 0.7rem;
+                height: 2rem;
+                line-height: 2.3rem;
+            }
+            a {
+                padding: 0.4rem 0.3rem;
+                display: inline;
+            }
+        }
+    }
+}
+
+.section-title,
+.hero-title {
+    font-size: 4rem;
+    @include breakpoint(small only) {
+        font-size: 3rem;
+        letter-spacing: 0.4rem;
+    }
+    font-weight: bold;
+    letter-spacing: 0.6rem;
+    text-transform: uppercase;
+    a {
+        color: $secondary-color;
+        transition: $button-transition;
+        &:hover {
+            color: lighten($secondary-color, 20%);
+        }
+    }
+}
+
+.content-wrapper {
+    .banner-container {
+        position: relative;
+        height: 60vh;
+        max-height: 600px;
+        min-height: 375px;
+        @include breakpoint(small only) {
+            height: 500px;
+        }
+        padding: 0;
+        background-size: cover !important;
+        text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        @include breakpoint (large up) {
+            height: 600px;
+            padding: 0;
+        }
+        #page-title {
+            margin-top: 200px;
+            color: $white;
+            font-size: 7rem;
+            @include breakpoint(small only) {
+                font-size: 3.7rem;
+            }
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+        }
+        &#page-banner-container {
+            height: 50vh;
+            #page-title {
+                margin-top: 150px;
+                @include breakpoint(small only) {
+                    margin-top: 190px;
+                }
+            }
+        }
+    }
+    #cta-container {
+        height: 2.5rem;
+        background: $secondary-color;
+        transition: background-color 250ms;
+        &:hover {
+            background: darken($primary-color, 10%);
+        }
+        a {
+            color: $white;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 0;
+            color: $white;
+            font-size: 1.3rem;
+            line-height: 2.5rem;
+            @include breakpoint(small only) {
+                font-size: 0.9rem;
+            }
+        }
+    }
+    .hero-item {
+        position: relative;
+        height: 60vh;
+        max-height: 500px;
+        min-height: 400px;
+        background-size: cover !important;
+        text-align: center;
+        color: $white;
+        text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+        .hero-title {
+            position: absolute;
+            top: 15%;
+            left: 0;
+            right: 0;
+            color: $white;
+        }
+        .hero-subtitle {
+            position: absolute;
+            top: 35%;
+            left: 0;
+            right: 0;
+            font-family: $body-font-family;
+            letter-spacing: -0.1rem;
+            text-transform: lowercase;
+            color: $white;
+            @include breakpoint(small only) {
+                font-size: 1.8rem;
+            }
+        }
+        .hero-button {
+            position: absolute;
+            bottom: 17%;
+            left: 0;
+            right: 0;
+            width: max-content;
+            margin: auto;
+            font-size: 2.2rem;
+            letter-spacing: -0.1rem;
+            padding: 0.2em 0.4em;
+            text-shadow: none;
+            @include breakpoint(small only) {
+                font-size: 2rem;
+            }
+        }
+        .gm-style .gm-style-iw {
+            color: $secondary-color;
+            font-size: 1rem;
+        }
+        #info-container {
+            position: absolute;
+            top: 5%;
+            left: 3%;
+            border-left: 3px solid $primary-color;
+            padding: 0.5rem 1rem 1rem;
+            color: $secondary-color;
+            background: rgba($white, 0.85);
+            font-size: 1.5rem;
+            @include breakpoint(small only) {
+                font-size: 1.2rem;
+            }
+            font-weight: bold;
+            letter-spacing: -0.15rem;
+            text-align: left;
+            text-shadow: none;
+            .info-title {
+                font-size: 2.5rem;
+                @include breakpoint(small only) {
+                    display: none;
+                }
+                color: $secondary-color;
+                margin-top: -0.5rem;
+                margin-bottom: 0.2rem;
+                letter-spacing: 0.1rem;
+                text-transform: uppercase;
+            }
+            .top-margin {
+                margin-top: 0.8rem;
+            }
+            #info-site-title {
+                font-weight: bold;
+            }
+            #info-phone {
+                margin-top: 0.8rem;
+            }
+            a {
+                color: $secondary-color;
+                transition: $button-transition;
+                &:hover {
+                    color: lighten($secondary-color, 20%);
+                }
+            }
+            p {
+                margin-bottom: -1rem;
+                line-height: 1.8;
+            }
+        }
+    }
+    .resize {
+        height: 0 !important;
+    }
+    .drop-item {
+        height: 0;
+        max-height: max-content;
+        background-size: cover !important;
+        font-size: 1.2rem;
+        letter-spacing: -0.1rem;
+        @include breakpoint(small only) {
+            font-size: 1rem;
+        }
+        text-align: left;
+        transition: all 250ms;
+        overflow: hidden;
+        .drop-content-wrapper {
+            position: relative;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.9);
+            padding-bottom: 2rem;
+            @include breakpoint(small only) {
+                width: 100%;
+                background: rgba(255, 255, 255, 1);
+            }
+            .close-button {
+                position: absolute;
+                top: 20px;
+                width: 44px;
+                height: 44px;
+                border: 4px solid $secondary-color;
+                border-radius: 50%;
+                transition: transform 250ms ease-in-out;
+                @include breakpoint(small only) {
+                    top: 10px;
+                }
+                &.button-float {
+                    position: fixed;
+                    z-index: 50;
+                }
+                .close-x {
+                    stroke: $secondary-color;
+                    fill: transparent;
+                    stroke-linecap: round;
+                    stroke-width: 5;
+                }
+            }
+        }
+        .drop-column {
+            padding: 2rem 1.5rem 0;
+            @include breakpoint(small only) {
+                padding: 3rem 1rem 0;
+            }
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            letter-spacing: 0.1rem;
+        }
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            color: $secondary-color;
+            width: 80%;
+            margin: auto;
+            border-bottom: 1px solid $secondary-color;
+            margin-bottom: 1.5rem;
+        }
+        .button {
+            background: $primary-color;
+            font-size: 1.5rem;
+            padding: 0.5em 0.5em;
+            text-shadow: none;
+            &:hover {
+                background: darken($primary-color, 10%);
+            }
+        }
+        ul.no-bullet li ul {
+            list-style: none;
+        }
+        .size-medium,
+        .alignright {
+            width: 50% !important;
+            padding-left: 1.3rem;
+            @include breakpoint(small only) {
+                width: 100% !important;
+                padding-left: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        .callout-wrapper {
+            margin: 0 -0.5rem;
+            .callout {
+                background: rgba(255, 255, 255, 0.3);
+            }
+            .column-block {
+                padding: 0 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        .brands {
+            text-align: center;
+            padding: 0;
+            background: white;
+            height: max-content;
+            box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+            @include breakpoint(small only) {
+                margin-bottom: 3rem;
+            }
+            img {
+                max-height: 100px;
+                width: auto !important;
+                max-width: 77%;
+                margin: 1rem 2rem;
+            }
+            .black-white {
+                filter: grayscale(100%);
+            }
+        }
+    }
+    #insta-wrapper {
+        width: 100%;
+        height: 30%;
+        @include breakpoint(small only) {
+            display: none;
+        }
+    }
+    #mobile-insta-wrapper {
+        width: 100%;
+        @include breakpoint(medium up) {
+            display: none;
+        }
+        #sb_instagram .sb_instagram_header {
+            // width: 11%;
+            height: 3rem;
+            margin: 14px 0 15px 5%;
+            float: none;
+            .sbi_header_text {
+                // width: auto;
+            }
+            a {
+                // width: max-content;
+            }
+            h3.sbi_no_bio {
+                padding-top: 3px !important;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    #woocommerce-preview .woocommerce {
+        margin: 1.5rem;
+    }
+    #woocommerce-preview,
+    .page-content-wrapper {
+        position: relative;
+        padding: 2rem 2.5% 0;
+        .section-title {
+            text-align: center;
+        }
+        .woocommerce {
+            margin: 0;
+        }
+        .woocommerce-ordering {
+            @include breakpoint(small only) {
+                float: none;
+            }
+        }
+        ul.products li.product {
+            margin: 0 1% 2.992em 1%;
+            width: 23%;
+            @include breakpoint(768px down) {
+                width: 46%;
+            }
+            .woocommerce-loop-product__title {
+                font-family: $body-font-family;
+                font-size: 1.5rem;
+                letter-spacing: -0.1rem;
+                line-height: 0.9;
+                padding: 0 0.5rem 0 0;
+                color: $secondary-color;
+                &:hover {
+                    color: lighten($secondary-color, 20%);
+                }
+            }
+            .price {
+                font-size: 1.2rem;
+                margin-top: 0.2rem;
+            }
+            .button {
+                display: none;
+                margin: 0;
+                border-radius: 0;
+                background: $secondary-color;
+                color: $white;
+                font-weight: normal;
+                font-size: 1.3rem;
+                padding: 0.6rem 1rem;
+                &:hover {
+                    background: lighten($secondary-color, 20%);
+                }
+            }
+        }
+        iframe {
+            max-width: 100%;
+        }
+        .related.products {
+            clear: both;
+        }
+        #respond input#submit.alt,
+        a.button.alt,
+        button.button.alt,
+        input.button.alt {
+            background: $secondary-color;
+            &:hover {
+                background: lighten($secondary-color, 20%);
+            }
+        }
+        [type='number'],
+        [type='text'] {
+            height: 2.19rem;
+        }
+        #see-all {
+            position: absolute;
+            left: 2.5%;
+            bottom: 2rem;
+            font-size: 1.3rem;
+            a {
+                color: $secondary-color;
+                transition: $button-transition;
+                &:hover {
+                    color: lighten($secondary-color, 20%);
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 2rem 0;
+    background-size: cover !important;
+    background: $secondary-color;
+    color: $white;
+    .row {
+        width: 100%;
+        @include breakpoint(medium) {
+            width: 90%;
+        }
+        @include breakpoint(large) {
+            width: 60%;
+        }
+        .footer-title {
+            color: $white;
+            border-bottom: 1px solid $primary-color;
+            line-height: 1;
+            margin-top: 0.5rem;
+            font-size: 2rem;
+            letter-spacing: 0.2rem;
+            width: 100%;
+            @include breakpoint(small only) {
+                width: 30%;
+            }
+        }
+        p {
+            line-height: 1.2;
+            margin-bottom: 0;
+        }
+        &#footer-top-row {
+            margin-bottom: 1.4rem;
+        }
+    }
+    .social {
+        font-size: 1.7rem;
+        line-height: 1.7rem;
+    }
+    a {
+        color: $white;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+    &.home-footer {
+        padding: 0;
+        .row {
+            width: 100%;
+        }
+    }
+}

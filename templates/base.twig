@@ -1,0 +1,41 @@
+{% block html_head_container %}
+	{% include 'html-header.twig' %}
+
+	{% block head %}
+	{% endblock %}
+
+	</head>
+{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
+
+		<header class="header" id="header">
+			{% block header %}
+				{% include "header.twig" %}
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			<!-- Content block will almost always be over-ridden -->
+			{% block content %}
+				{% if title %}
+					<h1>{{title}}</h1>
+				{% endif %}
+			{% endblock %}
+		</section>
+
+		{% block footer %}
+			<footer class="{{class}}">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+
+</body>
+
+<script src="{{site.theme.link}}/public/js/jquery.min.js"></script>
+<script src="{{site.theme.link}}/public/js/what-input.min.js"></script>
+<script src="{{site.theme.link}}/public/js/foundation.min.js"></script>
+<script src="{{site.theme.link}}/public/js/site.js"></script>
+
+</html>

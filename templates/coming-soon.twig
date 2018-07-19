@@ -1,0 +1,35 @@
+{% include 'html-header.twig' %}
+
+<body>
+	<div id="body-wrapper">
+
+
+		<div id="info">
+
+			<div id="logo">
+				<img src="{{site_logo}}" />
+			</div>
+			<div id="date">
+				<span>April 2018</span>
+			</div>
+			<div id="address">
+				<p class="addy-line">
+					<span>1629 Shelby Ave</span>
+				</p>
+				<p class="addy-line">
+					<span>Nashville, TN 37206</span>
+				</p>
+			</div>
+			<div id="signup">
+				<form method="post" name="newsletter-signup">
+					{% filter shortcodes %}[mc4wp_form id="7"]{% endfilter %}
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	{{ function('wp_footer') }}
+</body>

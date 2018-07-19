@@ -1,0 +1,15 @@
+<ul class="menu align-center"> 
+
+	{% if menu %}
+		{% for item in menu %}
+			<li class="{{ item.classes | join(' ') }}">
+				<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title | wrap_first_letters }} </a>
+			</li>
+		{% endfor %}
+		{# <li class="menu-item">
+			<a href="{{site.link}}/cart">cart</a>
+		</li> #}
+	{% endif %}
+	
+		
+</ul>

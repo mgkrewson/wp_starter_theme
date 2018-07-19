@@ -1,0 +1,26 @@
+{
+  "name": "sabco",
+  "version": "1.0.0",
+  "description": "Custom WP theme for http://sab.co",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mkrewson",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "browser-sync": "^2.23.5",
+    "dotenv": "^6.0.0",
+    "foundation-sites": "^6.4.4-rc1",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.3"
+  }
+}
