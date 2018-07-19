@@ -1,7 +1,7 @@
 {
-  "name": "sabco",
+  "name": "WP Starter Theme",
   "version": "1.0.0",
-  "description": "Custom WP theme for http://sab.co",
+  "description": "Custom WP starter theme using Timber and Foundation",
   "main": "index.js",
   "directories": {
     "test": "tests"
